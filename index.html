@@ -117,7 +117,7 @@
     <div class="kicker">mal kurz Klartext</div>
     <h2>Was du in 4 Monaten gebaut hast</h2>
     <div class="stat" id="followCount">6.312</div>
-    <div id="followPlus" style="height:22px;font-size:15px;font-weight:800;color:#3fae6e;opacity:0;transition:opacity .4s ease">+1 · jemand ist dir gerade gefolgt 🦋</div>
+    <div id="followPlus" style="height:22px;font-size:15px;font-weight:700;color:var(--rose2);opacity:0;transition:opacity .4s ease">und es werden jeden Tag mehr 🦋</div>
     <p style="margin-top:4px">Follower auf <b>@hellenivoryy</b>. In <b>4 Monaten</b>. Neben einem Vollzeit-SAP-Job mit Wecker um 5:30.</p>
     <div class="note">
       <p style="margin:0;color:var(--ink)">Die meisten Menschen reden ein Jahr lang davon, "mal was zu starten". Du hast es einfach gemacht und drangeblieben, jeden Tag, auch an den Tagen wo du keine Lust hattest. Das ist kein Glück. Das ist Charakter. 🦋</p>
@@ -195,7 +195,7 @@
       <p style="margin:0;color:var(--wine);font-weight:800;font-size:19px">Ein spontanes Ski-Wochenende. Nur wir zwei. Du packst (mit übergewichtigem Handgepäck, dein krassestes hidden Talent 🤭), ich plane den Rest.</p>
     </div>
     <p style="color:var(--ink)">Vier Monate. Von "Hey Samu, hoffe du bist gut in die Woche gestartet" bis zu dem Menschen den ich abends am liebsten sehe. Das ging schnell, und ich würde keine Sekunde davon ändern.</p>
-    <p style="font-weight:700;color:var(--ink)">Werd schnell wieder fit, babes. Ich bin gleich bei dir, mit Tee, Schokolade und Wärmflasche.</p>
+    <p style="font-weight:700;color:var(--ink)">Werd schnell wieder fit, babes. Ich denk die ganze Zeit an dich. 🤍</p>
     <button class="btn" onclick="reveal()" id="secretBtn">Eine letzte Sache 🙊</button>
     <div id="secret" style="display:none">
       <div class="big">🍽️🦋</div>
@@ -231,12 +231,7 @@ function animateFollowers(){
   const el=document.getElementById('followCount');
   const plus=document.getElementById('followPlus');
   el.textContent=FOLLOWERS.toLocaleString('de-DE');
-  setTimeout(()=>{
-    plus.style.opacity=1;
-    el.textContent=(FOLLOWERS+1).toLocaleString('de-DE');
-    el.style.transform='scale(1.12)';
-    setTimeout(()=>{el.style.transition='transform .3s ease';el.style.transform='scale(1)';},120);
-  },1100);
+  setTimeout(()=>{ plus.style.opacity=1; },900);
 }
 function go(i){cards[cur].classList.remove('active');cur=i;cards[cur].classList.add('active');cards[cur].scrollTop=0;setProg();if(i===2)animateFollowers();}
 function restart(){go(0);}
